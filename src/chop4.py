@@ -5,13 +5,21 @@
 def chop(findme, base_list):
     bl_size = len(base_list)
     midway = (bl_size / 2)
+    bottom = 0
+    top = bl_size
     while bl_size > 0:
         if base_list[midway] > findme:
-            midway = midway / 2
+            top = midway
         elif base_list[midway] < findme:
-            midway = (midway + len(base_list)) / 2
+            bottom = midway
         else:
             return midway
+        midway = (top + bottom) / 2
         bl_size = bl_size / 2
     return -1
 
+arr = []
+for i in range(0, 1000000):
+    arr.append(i)
+
+print chop(88723, arr)
