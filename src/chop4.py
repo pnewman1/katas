@@ -18,8 +18,3 @@ def chop(findme, base_list):
         bl_size = bl_size / 2
     return -1
 
-arr = []
-for i in range(0, 1000000):
-    arr.append(i)
-
-print chop(88723, arr)

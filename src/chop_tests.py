@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import chop1 as chop
+import chop4 as chop
 import unittest
 
 #http://codekata.pragprog.com/2007/01/kata_two_karate.html
