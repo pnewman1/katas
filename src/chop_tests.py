@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import chop4 as chop
+import chop5 as chop
 import unittest
 
 #http://codekata.pragprog.com/2007/01/kata_two_karate.html
@@ -27,7 +27,12 @@ class chop_tests(unittest.TestCase):
 				self.assertEqual(-1, chop.chop(4, [1, 3, 5, 7]))
 				self.assertEqual(-1, chop.chop(6, [1, 3, 5, 7]))
 				self.assertEqual(-1, chop.chop(8, [1, 3, 5, 7]))
+				self.assertEqual(4, chop.chop(6, [0, 2, 4, 5, 6, 9, 12, 14, 15, 18, 20]))
 
+				arr = []
+				for i in range(60, 100000):
+						arr.append(i)
+				self.assertEqual(8, chop.chop(68, arr))
 
 def main():
 		unittest.main()
