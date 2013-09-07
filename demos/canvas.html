@@ -12,8 +12,8 @@
     for(y = 0; y < 50; y++){
      for(x = 0; x < 250; x++){
       b = 255 - x + y;
-      r = Math.floor(Math.random()*255)
-      ctx.fillStyle = "rgba("+y+", "+r+", "+b+", 0.5)";
+      g = Math.floor(Math.random()*255)
+      ctx.fillStyle = "rgba("+y+", "+g+", "+b+", 0.5)";
       ctx.fillRect (x*4, y*4, 4, 4);
      }
     } 
