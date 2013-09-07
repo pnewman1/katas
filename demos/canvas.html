@@ -9,12 +9,12 @@
 
   function loop() {
    setTimeout(function(){
-    for(i = 0; i < 50; i++){
-     for(j = 0; j < 250; j++){
-      x = 255 - j + i;
+    for(y = 0; y < 50; y++){
+     for(x = 0; x < 250; x++){
+      b = 255 - x + y;
       r = Math.floor(Math.random()*255)
-      ctx.fillStyle = "rgba("+i+", "+r+", "+x+", 0.5)";
-      ctx.fillRect (j*4, i*4, 4, 4);
+      ctx.fillStyle = "rgba("+y+", "+r+", "+b+", 0.5)";
+      ctx.fillRect (x*4, y*4, 4, 4);
      }
     } 
     loop();
