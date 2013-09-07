@@ -1,0 +1,24 @@
+<canvas id="c" width="1500" height="1500">
+</canvas>
+
+<script type="application/javascript">
+    var canvas = document.getElementById("c");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+     }
+
+  function loop() {
+   setTimeout(function(){
+    for(i = 0; i < 50; i++){
+     for(j = 0; j < 250; j++){
+      x = 255 - j + i;
+      r = Math.floor(Math.random()*255)
+      ctx.fillStyle = "rgba("+i+", "+r+", "+x+", 0.5)";
+      ctx.fillRect (j*4, i*4, 4, 4);
+     }
+    } 
+    loop();
+   }, 20);
+  }
+loop();
+</script>
