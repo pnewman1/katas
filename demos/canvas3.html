@@ -1,0 +1,28 @@
+<canvas id="c" width="1500" height="1500">
+</canvas>
+
+<script type="application/javascript">
+    var canvas = document.getElementById("c");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+     }
+  var flip = 4;
+  function loop() {
+   setTimeout(function(){
+    for(y = 0; y < 55; y++){
+     for(x = 0; x < 200; x++){
+      b = 255 - x + y;
+      r = y;
+      g = Math.floor(Math.random()*255);
+      size = Math.floor(Math.random()*5);
+      ctx.fillStyle = "rgba("+r+", "+g+", "+b+", .7)";
+      ctx.beginPath();
+      ctx.arc(x*4, y*4, size, 0, Math.PI*2, true);
+      ctx.fill();
+     }
+    } 
+    loop();
+   }, 20);
+  }
+loop();
+</script>
