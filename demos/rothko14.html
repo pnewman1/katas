@@ -1,0 +1,43 @@
+<canvas id="c" width="800" height="840">
+</canvas>
+
+<script type="application/javascript">
+    var canvas = document.getElementById("c");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+     }
+
+  function loop() {
+   setTimeout(function(){
+    for(y = 0; y < 205; y++){
+     for(x = 0; x < 190; x++){
+      if((x < 5 || x > 185) || (y < 5 || y > 200) || (y > 130 && y < 135)){
+       r = 57;
+       g = 30;
+       b = 39;
+      } else if(y <= 130){
+        randr = Math.floor(Math.random()*x);
+        randg = Math.floor(Math.random()*(x/20));
+        randb = Math.floor(Math.random()*(x/15));
+        r = 160+randr;
+        g = 35+randg;
+        b = 35+randb;
+      } else {
+        randr = Math.floor(Math.random()*(x/8));
+        randg = Math.floor(Math.random()*(x/9));
+        randb = Math.floor(Math.random()*(220-x));
+        r = 10+randr;
+        g = 10+randg;
+        b = 20+randb;
+      }
+      dimx = Math.floor(Math.random()*12);
+      dimy = Math.floor(Math.random()*12);
+      ctx.fillStyle = "rgba("+r+", "+g+", "+b+", .2)";
+      ctx.fillRect (x*2, y*2, dimx, dimx);
+     }
+    } 
+    loop();
+   }, 50);
+  }
+loop();
+</script>
