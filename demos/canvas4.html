@@ -1,0 +1,31 @@
+<canvas id="c" width="255" height="255">
+</canvas>
+
+<script type="application/javascript">
+    var canvas = document.getElementById("c");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+     }
+
+  function loop() {
+   setTimeout(function(){
+     for(x = 1; x < 200; x++){
+      newx = Math.floor(Math.random()*200);
+      //r = Math.floor(Math.random()*255);
+      r = 0;
+      g = x;
+      b = 255;
+      dimy = Math.floor(Math.random()*10);
+      for(y = 4; y < 22; y++){
+        //console.log(y);
+        b = b - (y*3); 
+        ctx.fillStyle = "rgba("+r+", "+g+", "+b+", 0.5)";
+        ctx.fillRect (newx*10, y*10, 10, 10);
+      }
+     }
+     
+    loop();
+   }, 1000);
+  }
+loop();
+</script>

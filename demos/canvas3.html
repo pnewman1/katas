@@ -14,8 +14,8 @@
       b = 255 - x + y;
       r = y;
       g = Math.floor(Math.random()*255);
-      size = Math.floor(Math.random()*5);
-      ctx.fillStyle = "rgba("+r+", "+g+", "+b+", .7)";
+      size = Math.floor(Math.random()*3);
+      ctx.fillStyle = "rgba("+r+", "+g+", "+b+", .5)";
       ctx.beginPath();
       ctx.arc(x*4, y*4, size, 0, Math.PI*2, true);
       ctx.fill();
