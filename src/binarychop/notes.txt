@@ -1,0 +1,15 @@
+Kata #2
+http://codekata.pragprog.com/2007/01/kata_two_karate.html
+
+Notes:
+1. I didn't do this over five consecutive days
+2. The first one missed the point of the program, though it does technically work
+3. My approaches: 
+  i) chop2.py iterate until the value is found, or you hit the top or bottom of the array
+ ii) chop3.py same thing, except with a recursive function
+iii) chop4.py iterate until the list size is 0, reducing by half each time
+ iv) chop5.py same iterator as iii, but finds the index of the array by calculating the fraction of where you are in the array, and multiplying that by the array size 
+  v) chop6.py similar to iv, but with a fixed number of iterations defined at the beginning
+4. What else could be done? More recursion, more functions, more closures.
+5. Which works the best? I kind of like chop5.py
+
