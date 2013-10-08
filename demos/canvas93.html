@@ -1,0 +1,45 @@
+<canvas id="c" width="1200" height="300">
+</canvas>
+
+<script type="application/javascript">
+    var canvas = document.getElementById("c");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+     }
+  r = g = b = 1;
+  m = 0;
+  l = 0;
+  z = 4.0;
+  function loop() {
+   setTimeout(function(){
+    ctx.clearRect(0,0,300,300);
+     for(x = 0; x < 75; x++){
+      for(y = 0; y < 75; y++){
+        time = new Date().getTime() * .0003;
+        cx = x +(.5*Math.sin(time/5));
+        cy = y +(.5*Math.cos(time/3));
+        v1 = Math.sin(Math.sqrt((100*(Math.pow(cy, 2)+Math.pow(cx, 2))+1+time)));
+        v2 = Math.sin(10*(x*Math.sin(time/2)+y*Math.cos(time/3))+time);
+        v3 = Math.sin((x*10)+time);
+        v = v2;
+
+        r = Math.floor(255 * (Math.sin(v*Math.PI))+1);
+        g = Math.floor(255 * (Math.sin(v*Math.PI + 2*Math.PI /3))+1);
+        b = Math.floor(255 * (Math.sin(v*Math.PI + 4*Math.PI /3))+1);
+        z=Math.sin(time)+(v)+2;
+        //z = v3+2;
+        //z = 4;
+      ctx.fillStyle = "rgba("+r+", "+g+", "+b+", 1 )";
+      ctx.fillRect (x*4, y*4, z, z);
+     }
+     m+=1;
+     l +=6;
+    }
+    m = m / l;
+    l = l / 2;
+    loop();
+   }, 20);
+
+  }
+loop();
+</script>
