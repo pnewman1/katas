@@ -1,0 +1,35 @@
+<canvas id="c" width="1200" height="512">
+</canvas>
+
+<script type="application/javascript">
+    var canvas = document.getElementById("c");
+    if (canvas.getContext) {
+      var ctx = canvas.getContext("2d");
+     }
+  time = 0.0;
+  function loop() {
+   setTimeout(function(){
+    ctx.clearRect(0,0,512,512);
+     for(x = 0; x < 128; x++){
+      for(y = 0; y < 128; y++){
+        time = time + 0.00002;
+        v1 = Math.sin((x/32.0)+time);
+        v2 = Math.sin(Math.sqrt(Math.PI*((x-64) * Math.sin(time*-1)+64 + (y-64) * Math.cos(time*-1)+64) / 8.0 ));
+        v = v2+v1;
+        r = 0;
+        g = 128 + Math.floor(128 * Math.cos(Math.PI * (v)/4));
+        b = 128 + Math.floor(128 * Math.sin(Math.PI * (v)/6)); 
+
+        //z=Math.sin(time)+v+4;
+        //z = v+2.4;
+        z = 4;
+      ctx.fillStyle = "rgba("+r+", "+g+", "+b+", 1 )";
+      ctx.fillRect (x*4, y*4, z, z);
+     }
+    }
+    loop();
+   }, 20);
+
+  }
+loop();
+</script>
