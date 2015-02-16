@@ -7,7 +7,7 @@ import unittest
 class sort_tests(unittest.TestCase):
   def test_sort(self):
     self.assertEqual("aaaaabbbbcccdeeeeeghhhiiiiklllllllmnnnnooopprsssstttuuvwyyyy", sort.sort("When not studying nuclear physics, Bambi likes to play beach volleyball."))
-
+    self.assertEqual("abcde", sort.sort("edcab"))
 def main():
   unittest.main()
 

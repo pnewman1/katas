@@ -12,7 +12,6 @@ def sort(string):
   string = re.sub(p, "", string)
   string = string.replace(" ", "")
   stringlist = list(string)
-  print len(stringlist)
 
   #insertion sort
   for i in range(0, len(stringlist)):
